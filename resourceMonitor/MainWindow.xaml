@@ -3,10 +3,40 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:resourceMonitor"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+        Title="shikkokunorei" Height="650" Width="500"
+        Background="Black"
+        FontFamily="JetBrainsMono">
+    <StackPanel>
+        <WrapPanel>
+            <Label Content="CPU" Foreground="White" FontSize="20" />
+            <Label Content="{Binding CpuUsage}" Foreground="White" FontSize="20" />
+            <Label Content="{Binding CpuClock}" Foreground="White" FontSize="20" />
+            <Label Content="{Binding CpuTemp}" Foreground="White" FontSize="20" />
+            <Label Content="{Binding CpuTempMax}" Foreground="White" FontSize="20" />
+            <Label Content="{Binding CpuAvg}" Foreground="White" FontSize="20" />
+        </WrapPanel>
+        <WrapPanel>
+            <Label Content="GPU" Foreground="White" FontSize="20" /><!-- todo: Gpu/Cpu names would be cool -->
+            <Label Content="{Binding GpuUsage}" Foreground="White" FontSize="20" />
+            <Label Content="{Binding GpuTemp}" Foreground="White" FontSize="20" />
+            <Label Content="{Binding GpuTempMax}" Foreground="White" FontSize="20" />
+            <Label Content="{Binding GpuAvg}" Foreground="White" FontSize="20" />
+            <Label Content="{Binding GpuMemory}" Foreground="White" FontSize="20" />
+        </WrapPanel>
+        <WrapPanel>
+            <Label Content="Disks" Foreground="White" FontSize="20" />
+            <Label Content="{Binding DiskUsage}" Foreground="White" FontSize="20" />
+            <Label Content="{Binding DiskTemp}" Foreground="White" FontSize="20" />
+            <Label Content="{Binding DiskType}" Foreground="White" FontSize="20" /><!-- sata/nvme -->
+            <Label Content="{Binding DiskStorage}" Foreground="White" FontSize="20" />
+        </WrapPanel>
+        <WrapPanel>
+            <Label Content="RAM" Foreground="White" FontSize="20" />
+            <Label Content="{Binding RamUsage}" Foreground="White" FontSize="20" />
+            <Label Content="{Binding RamTotal}" Foreground="White" FontSize="20" />
+            <Label Content="{Binding RamSpecs}" Foreground="White" FontSize="20" />
+            <!-- ddr4/ddr5 or single/dual slot clocks etc -->
+        </WrapPanel>
+    </StackPanel>
 </Window>
